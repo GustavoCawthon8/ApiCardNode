@@ -94,6 +94,10 @@ app.get("/painel",verifyToken, async(req, res)=>{
   res.json(usercard);
 })
 
+app.get("/", async(req, res)=>{
+  res.json("api rodando");
+})
+
 db.sync().then(()=>{
   /*
   app.listen(PORT, ()=>{
