@@ -95,7 +95,12 @@ app.get("/painel",verifyToken, async(req, res)=>{
 })
 
 db.sync().then(()=>{
+  /*
   app.listen(PORT, ()=>{
     console.log(chalk.bgGreenBright(`Servidor rodando na porta http://localhost:${PORT}`))
-  })
+  })*/
+    console.log(chalk.bgGreenBright("Banco de dados arrumado"))
+ 
 }).catch(err => console.log(err));
+
+module.exports = app;
