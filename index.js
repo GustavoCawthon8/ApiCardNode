@@ -3,6 +3,7 @@ const express = require('express');
 const chalk = require("chalk");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const cors = require("cors");
 
 const UserCard = require("./src/models/UserCard");
 const db = require('./src/config/db');
@@ -13,7 +14,8 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: true}));
+app.use(cors());
 
 
 app.post("/users/create",verifyToken, async(req, res)=>{
