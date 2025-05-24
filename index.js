@@ -107,4 +107,7 @@ db.sync().then(()=>{
  
 }).catch(err => console.log(err));
 
-module.exports = app;
+//module.exports = app;
+app.listen(PORT, ()=>{
+    console.log(chalk.bgGreenBright(`Servidor rodando na porta http://localhost:${PORT}`))
+  })
